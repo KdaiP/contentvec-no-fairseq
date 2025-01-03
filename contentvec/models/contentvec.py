@@ -138,6 +138,7 @@ class ContentvecModel(nn.Module):
             self.target_glu = nn.Sequential(
                 nn.Linear(final_dim, final_dim * 2), nn.GLU()
             )
+        self.final_proj = nn.Linear(cfg.encoder_embed_dim, final_dim)
 
             
         self.layer_proj = nn.Linear(cfg.encoder_embed_dim, final_dim)
